@@ -4,14 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <title>Survey Form</title>
+  <title>Phone Survey Form</title>
 </head>
 <body>
   <main>
     <h1>Phone Survey Form</h1>
+    <p>Thank you for being here. Kindly answer the following questions about your phone.</p>
     <form>
       <fieldset>
-        <legend>Phone OS:</legend>
+        <legend>Phone OS: <small>What's the Operating System of your phone?</small></legend>
         <label>
           <input type="radio" name="os" value="android" required>
           Android
@@ -23,28 +24,28 @@
         <label>
           <input type="radio" name="os" value="other">
           Other:
-          <input type="text" name="os-text" placeholder="Not listed? Please type it here ...">
+          <input type="text" name="os-text" tabindex="-1" placeholder="Not listed? Please type it here ..." fieldset-text>
         </label>
       </fieldset>
-      <label>
+      <label class="standalone standalone-text">
         Phone Company:
-        <input type="text" name="company" placeholder="Phone Company Make" required minlength="5">
+        <input type="text" name="company" placeholder="What's your phone's company make? ..." required minlength="5">
       </label>
-      <label>
+      <label class="standalone standalone-text">
         Phone Model:
-        <input type="text" name="model" placeholder="Phone Model" required minlength="3">
+        <input type="text" name="model" placeholder="What's the model of your phone? ..." required minlength="3">
       </label>
-      <label>
-        Number of SIMS:
+      <label class="standalone">
+        Number of SIMs:
         <select name="sims" required>
           <option value="1">1</option>
           <option value="2" selected>2</option>
-          <option value="3">3<option>
+          <option value="3">3</option>
           <option value="4">4</option>
         </select>        
       </label>
       <fieldset>
-        <legend>Active Social Media</legend>
+        <legend>Active Social Media <small>Which social media are you active in and are installed on your phone?</small></legend>
         <label>
           <input type="checkbox" name="social" value="Facebook" checked>
           Facebook
@@ -72,7 +73,7 @@
         <label>
           <input type="checkbox" name="social" value="other">
           Other:
-          <input type="text" name="social-other" placeholder="Any other? list them here ... ">
+          <input type="text" name="social-other" placeholder="Any other? Kindly list them here ... " tabindex="-1" fieldset-text>
         </label>
       </fieldset>
       <input type="submit" name="submit" value="Submit">

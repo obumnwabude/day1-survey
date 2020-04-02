@@ -1,0 +1,61 @@
+/* normalise */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin: 0 auto;
+  padding: 15px;
+}
+
+h1 {
+  margin: 20px 0 5px 0;
+  text-align: center;
+}
+
+fieldset {
+  border: none;
+  padding: 6px 12px 5px 12px;
+}
+
+small {
+  display: block;
+  margin-bottom: -5px;
+}
+
+label {
+  display: block;
+  margin: 5px;
+}
+
+label.standalone {
+  margin: 10px 15px;
+}
+
+label.standalone.standalone-text input {
+  display: block;
+}
+
+input[type="text"] {
+  border: none;
+  border-bottom: 1px solid grey;
+  margin-top: 5px;
+  display: block;
+  min-width: 250px;
+}
+
+input[fieldset-text] {
+  margin-left: 15px;
+  min-width: 235px;
+}
+
+select {
+  min-width: 35px;
+  margin: 0 0 0 10px;
+}
+
+input[type="submit"] {
+  float: right;
+  margin: 20px 50px 20px 0;
+} 
