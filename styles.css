@@ -2,6 +2,13 @@
 html, body {
   margin: 0;
   padding: 0;
+  font-size: 16px;
+}
+
+body {
+  background-color: #f9fcff;
+  font-family: 'Comic Neue', cursive;
+  font-size: 1.2rem;
 }
 
 main {
@@ -9,18 +16,24 @@ main {
   width: 80%;
   padding: 15px;
   max-width: 450px;
-  border: 2px solid black;
+  border: 2px solid #f9fcff;
   border-radius: 15px;
   padding-bottom: 75px;
+  background-color: white;
+  box-shadow: 0 0 10px 3px #3F51B5;
 }
 
-h1, p {
+h1 {
   margin: 0;
   text-align: center;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-style: double;
 }
 
-h1 + p {
-  margin: 10px auto;
+p {
+  margin: 15px auto;
+  text-align: center;
 }
 
 fieldset {
@@ -28,9 +41,15 @@ fieldset {
   padding: 6px 12px 5px 12px;
 }
 
+legend {
+  font-weight: bold;
+}
+
 small {
   display: block;
   margin-bottom: -5px;
+  font-size: 0.9rem;
+  font-weight: 300;
 }
 
 label {
@@ -39,11 +58,16 @@ label {
 }
 
 label.standalone {
-  margin: 10px 15px;
+  margin: 15px 15px;
+  font-weight: 700;
 }
 
 label.standalone.standalone-text input {
   display: block;
+}
+
+span.required {
+  color: red;
 }
 
 input[type="text"] {
@@ -60,7 +84,8 @@ input[fieldset-text] {
 }
 
 select {
-  min-width: 35px;
+  min-width: 40px;
+  min-height: 20px;
   margin: 0 0 0 10px;
 }
 
@@ -70,7 +95,12 @@ button {
   max-width: 75px;
   min-width: 75px;
   padding: 7px 0;
+  border: none;
   border-radius: 7px;
+  color: white;
+  background-color: #0000FF;
+  box-shadow: 0.5px 0.5px 3px 1px #3F51B5;
+  font-weight: 700;
 } 
 
 /* make the form two columns in desktop */
