@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Survey Form</title>
+</head>
+<body>
+  <main>
+    <h1>Phone Survey Form</h1>
+    <form>
+      <fieldset>
+        <legend>Phone OS:</legend>
+        <label>
+          <input type="radio" name="os" value="android" required>
+          Android
+        </label>
+        <label>
+          <input type="radio" name="os" value="ios">
+          iOS
+        </label>
+        <label>
+          <input type="radio" name="os" value="other">
+          Other:
+          <input type="text" name="os-text" placeholder="Not listed? Please type it here ...">
+        </label>
+      </fieldset>
+      <label>
+        Phone Company:
+        <input type="text" name="company" placeholder="Phone Company Make" required minlength="5">
+      </label>
+      <label>
+        Phone Model:
+        <input type="text" name="model" placeholder="Phone Model" required minlength="3">
+      </label>
+      <label>
+        Number of SIMS:
+        <select name="sims" required>
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+          <option value="3">3<option>
+          <option value="4">4</option>
+        </select>        
+      </label>
+      <fieldset>
+        <legend>Active Social Media</legend>
+        <label>
+          <input type="checkbox" name="social" value="Facebook" checked>
+          Facebook
+        </label>
+        <label>
+          <input type="checkbox" name="social" value="Whatsapp" checked>
+          Whatsapp
+        </label>
+        <label>
+          <input type="checkbox" name="social" value="Instagram">
+          Instagram
+        </label>
+        <label>
+          <input type="checkbox" name="social" value="Messenger">
+          Messenger
+        </label>
+        <label>
+          <input type="checkbox" name="social" value="Twitter">
+          Twitter
+        </label>
+        <label>
+          <input type="checkbox" name="social" value="LinkedIn">
+          LinkedIn
+        </label>
+        <label>
+          <input type="checkbox" name="social" value="other">
+          Other:
+          <input type="text" name="social-other" placeholder="Any other? list them here ... ">
+        </label>
+      </fieldset>
+      <input type="submit" name="submit" value="Submit">
+    </form>
+  </main>
+</body>
+</html>
