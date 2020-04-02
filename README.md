@@ -2,7 +2,7 @@
 
 ## Link 
 
-The link to the website created in this task is https://obumnwabude.github.io/day1-survey
+The link to the website created in this task is https://obumnwabude.github.io/day1-survey/index.html 
 
 ## Description
 A survey form is built to collect feedback from the public
