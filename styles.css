@@ -18,7 +18,7 @@ main {
   max-width: 450px;
   border: 2px solid #f9fcff;
   border-radius: 15px;
-  padding-bottom: 75px;
+  padding-bottom: 80px;
   background-color: white;
   box-shadow: 0 0 10px 3px #3F51B5;
 }
@@ -97,25 +97,29 @@ select {
 }
 
 button {
-  float: right;
-  margin: 20px 50px 20px 0;
-  max-width: 75px;
   min-width: 75px;
-  padding: 7px 0;
+  padding: 10px;
   border: none;
   border-radius: 7px;
   color: white;
   background-color: #0000FF;
   box-shadow: 0.5px 0.5px 3px 1px #3F51B5;
-  font-weight: 700;
+  font-family: 'Comic Neue', cursive;
+  font-size: 1.3rem;
+  font-weight: bold;
 } 
+
+button[type="submit"] {
+  float: right;
+  margin: 20px 35px 20px 0;
+}
 
 /* make the form two columns in desktop */
 @media (min-width: 992px) {
   main {
     max-width: 900px;
     border-radius: 25px;
-    padding: 20px 50px;
+    padding: 10px 50px;
   }
 
   form {

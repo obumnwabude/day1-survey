@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Thank you!</title>
+</head>
+<body>
+  <main>
+    <h1>Thank you</h1>
+    <p>Thank you for filling the phone survey form.</p>
+    <p>Do you want to fill it again? <a href="index.html" role="button"><button>Fill Again</button></a></p>
+    <p>Or, please share this form and help get others to answer this survey  <button id="copy">Copy Link</button></p>
+  </main>
+  <script type="text/javascript">
+    // get the copy button 
+    const copyButton = document.querySelector('#copy');
+
+    // the url for the phone survey form 
+    const url = 'https://obumnwabude.github.io/day1-survey/';
+
+    const fallbackCopyTextToClipboard = url =>  {
+      let textArea = document.createElement('textarea');
+      textArea.value = url;
+      
+      // Avoid scrolling to bottom
+      textArea.style.top = '0';
+      textArea.style.left = '0';
+      textArea.style.position = 'fixed';
+
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+
+      try {
+        var successful = document.execCommand('copy');
+        var msg = successful ? 'successful' : 'unsuccessful';
+        if (successful) alert('Link copied to Clipboard');
+      } catch (err) {
+        console.error('Fallback: Oops, unable to copy', err);
+      }
+
+      document.body.removeChild(textArea);
+    }
+
+    const copyTextToClipboard = url => {
+      if (!navigator.clipboard) {
+        fallbackCopyTextToClipboard(url);
+        return;
+      }
+      navigator.clipboard.writeText(url).then(function() {
+        alert('Link copied to Clipboard');
+      }, function(err) {
+        console.error('Async: Could not copy text: ', err);
+      });
+    }
+
+    copyButton.addEventListener('click', e => copyTextToClipboard(url));
+  </script>
+</body>
+</html>

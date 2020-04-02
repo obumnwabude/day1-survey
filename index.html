@@ -31,7 +31,7 @@
         </fieldset>
         <label class="standalone standalone-text">
           Phone Company:<span class="required">*</span>
-          <input type="text" name="company" placeholder="What's your phone's company make? ..." required minlength="5">
+          <input type="text" name="company" placeholder="What's your phone's company make? ..." required minlength="3">
         </label>
         <label class="standalone standalone-text">
           Phone Model:<span class="required">*</span>
@@ -99,7 +99,7 @@
     form.addEventListener('submit', e => {
       e.preventDefault();
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => console.log('Success!', response))
+        .then(response => location.assign('thankyou.html'))
         .catch(error => console.error('Error!', error.message));
     });
   </script>
