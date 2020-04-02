@@ -11,7 +11,7 @@
   <main>
     <h1>Phone Survey Form</h1>
     <p>Thank you for being here. Kindly answer the following questions about your phone.</p>
-    <form>
+    <form method="POST" id="survey">
       <div id="left-desktop">
         <fieldset>
           <legend>Phone OS:<span class="required">*</span> <small>What's the Operating System of your phone?</small></legend>
@@ -24,9 +24,9 @@
             iOS
           </label>
           <label>
-            <input type="radio" name="os" value="other">
+            <input type="radio" name="os" value="other" id="os-other">
             Other:
-            <input type="text" name="os-other" tabindex="-1" placeholder="Not listed? Please type it here ..." fieldset-text>
+            <input type="text" name="os-other" tabindex="-1" id="os-other-text" placeholder="Not listed? Please type it here ..." fieldset-text>
           </label>
         </fieldset>
         <label class="standalone standalone-text">
@@ -51,38 +51,57 @@
         <fieldset>
           <legend>Active Social Media<span class="required">*</span> <small>Which social media are you active in and are installed on your phone? (Please tick the ones that apply)</small></legend>
           <label>
-            <input type="checkbox" name="social" value="Facebook" checked>
+            <input type="checkbox" name="facebook" checked>
             Facebook
           </label>
           <label>
-            <input type="checkbox" name="social" value="Whatsapp" checked>
+            <input type="checkbox" name="whatsapp" checked>
             Whatsapp
           </label>
           <label>
-            <input type="checkbox" name="social" value="Instagram">
+            <input type="checkbox" name="instagram">
             Instagram
           </label>
           <label>
-            <input type="checkbox" name="social" value="Messenger">
+            <input type="checkbox" name="messenger">
             Messenger
           </label>
           <label>
-            <input type="checkbox" name="social" value="Twitter">
+            <input type="checkbox" name="twitter">
             Twitter
           </label>
           <label>
-            <input type="checkbox" name="social" value="LinkedIn">
+            <input type="checkbox" name="linkedin">
             LinkedIn
           </label>
           <label>
-            <input type="checkbox" name="social" value="other">
+            <input type="checkbox" name="social-other" id="social-other">
             Other:
-            <input type="text" name="social-other" placeholder="Any other? Kindly list them here ... " tabindex="-1" fieldset-text>
+            <input type="text" name="social-other-text" id="social-other-text" placeholder="Any other? Kindly list them here ... " tabindex="-1" fieldset-text>
           </label>
         </fieldset>
         <button type="submit">Submit</button>
       </div>
     </form>
   </main>
+  <script type="text/javascript">
+    // make focus to enter the os-other-text input if other is clicked in os
+    const osOther = document.querySelector('#os-other');
+    osOther.addEventListener('click', e => document.querySelector('#os-other-text').focus());
+
+    // make focus to enter the social-other-text input if social-other is clicked
+    const socialOther = document.querySelector('#social-other');
+    socialOther.addEventListener('change', e => socialOther.checked ? document.querySelector('#social-other-text').focus() : false);
+
+    // post form details to google sheets
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyXBEa2ViXCNWQg6mJOp2XCdJa8WR_cf-yYYR5X1ixKG6PbHFQ/exec';
+    const form = document.querySelector('#survey');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message));
+    });
+  </script>
 </body>
 </html>

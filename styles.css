@@ -76,6 +76,13 @@ input[type="text"] {
   margin-top: 5px;
   display: block;
   min-width: 240px;
+  transition: border 1s;
+}
+
+input[type="text"]:focus {
+  border: none;
+  border-bottom: 3px solid #0000FF;
+  outline: none;
 }
 
 input[fieldset-text] {
