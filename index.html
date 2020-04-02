@@ -98,6 +98,7 @@
     const form = document.querySelector('#survey');
     form.addEventListener('submit', e => {
       e.preventDefault();
+      document.querySelector('button').disabled = true;
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         .then(response => location.assign('thankyou.html'))
         .catch(error => console.error('Error!', error.message));
