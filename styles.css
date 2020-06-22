@@ -114,6 +114,10 @@ button[type="submit"] {
   margin: 20px 35px 20px 0;
 }
 
+button[type="submit"]:disabled {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 /* make the form two columns in desktop */
 @media (min-width: 992px) {
   main {
