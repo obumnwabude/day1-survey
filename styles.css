@@ -6,7 +6,7 @@
 
 body {
   background-color: #f9fcff;
-  font-family: 'Comic Neue', cursive;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 20px;
 }
 
@@ -81,7 +81,7 @@ label.standalone-text input.blue:placeholder-shown + span {
   color: #000000;
   font-weight: bold;
   opacity: 1;
-  font-family: 'Comic Neue', cursive;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 1.2rem;
 }
 
@@ -119,7 +119,7 @@ button {
   color: white;
   background-color: #0000FF;
   box-shadow: 0.5px 0.5px 3px 1px #3F51B5;
-  font-family: 'Comic Neue', cursive;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 1.3rem;
   font-weight: bold;
 } 
