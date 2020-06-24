@@ -14,7 +14,7 @@
     <form method="POST" id="survey">
       <div id="left-desktop">
         <fieldset>
-          <legend>Phone OS:<span class="required">*</span> <small>What's the Operating System of your phone?</small></legend>
+          <legend>Phone OS</legend>
           <label>
             <input type="radio" name="os" value="android" required>
             Android
@@ -26,21 +26,21 @@
           <label>
             <input type="radio" name="os" value="other" id="os-other">
             Other:
-            <input type="text" name="os-other" tabindex="-1" id="os-other-text" placeholder="Not listed? Please type it here ..." fieldset-text>
+            <input type="text" name="os-other" tabindex="-1" id="os-other-text" fieldset-text>
           </label>
         </fieldset>
         <label class="standalone standalone-text">
-          Phone Company:<span class="required">*</span>
-          <input type="text" name="company" placeholder="What's your phone's company make? ..." required minlength="3">
+          <input type="text" class="blue" name="company" placeholder="Phone Company" required minlength="3">
+          <span>Phone Company</span>
         </label>
         <label class="standalone standalone-text">
-          Phone Model:<span class="required">*</span>
-          <input type="text" name="model" placeholder="What's the model of your phone? ..." required minlength="3">
+          <input type="text" class="blue" name="model" placeholder="Phone Model" required minlength="3">
+          <span>Phone Model</span>
         </label>
       </div>
       <div id="right-desktop">
         <label class="standalone">
-          Number of SIM cards:<span class="required">*</span>
+          <span>Number of SIM cards</span>
           <select name="sims" required>
             <option value="1">1</option>
             <option value="2" selected>2</option>
@@ -49,7 +49,7 @@
           </select>
         </label>
         <fieldset>
-          <legend>Active Social Media<span class="required">*</span> <small>Which social media are you active in and are installed on your phone? (Please tick the ones that apply)</small></legend>
+          <legend>Active Social Media</legend>
           <label>
             <input type="checkbox" name="facebook" checked>
             Facebook
@@ -77,7 +77,7 @@
           <label>
             <input type="checkbox" name="social-other" id="social-other">
             Other:
-            <input type="text" name="social-other-text" id="social-other-text" placeholder="Any other? Kindly list them here ... " tabindex="-1" fieldset-text>
+            <input type="text" name="social-other-text" id="social-other-text" tabindex="-1" fieldset-text>
           </label>
         </fieldset>
         <button type="submit">Submit</button>

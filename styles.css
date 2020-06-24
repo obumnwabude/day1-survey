@@ -1,20 +1,19 @@
 /* normalise */
-html, body {
+* {
   margin: 0;
   padding: 0;
-  font-size: 16px;
 }
 
 body {
   background-color: #f9fcff;
   font-family: 'Comic Neue', cursive;
-  font-size: 1.2rem;
+  font-size: 20px;
 }
 
 main {
   margin: 50px auto;
   width: 80%;
-  padding: 15px;
+  padding: 30px 15px;
   max-width: 450px;
   border: 2px solid #f9fcff;
   border-radius: 15px;
@@ -24,7 +23,6 @@ main {
 }
 
 h1 {
-  margin: 0;
   text-align: center;
   font-weight: 700;
   text-decoration: underline;
@@ -32,13 +30,17 @@ h1 {
 }
 
 p {
-  margin: 15px auto;
+  margin: 30px auto;
   text-align: center;
 }
 
 fieldset {
   border: none;
   padding: 6px 12px 5px 12px;
+}
+
+div#left-desktop > fieldset {
+  margin-bottom: 30px;
 }
 
 legend {
@@ -58,7 +60,7 @@ label {
 }
 
 label.standalone {
-  margin: 15px 15px;
+  margin: 0px 15px 30px 15px;
   font-weight: 700;
 }
 
@@ -66,8 +68,21 @@ label.standalone.standalone-text input {
   display: block;
 }
 
-span.required {
-  color: red;
+label.standalone-text {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+label.standalone-text input.blue:placeholder-shown + span {
+  display: none;
+}
+
+::placeholder {
+  color: #000000;
+  font-weight: bold;
+  opacity: 1;
+  font-family: 'Comic Neue', cursive;
+  font-size: 1.2rem;
 }
 
 input[type="text"] {
